@@ -1,0 +1,28 @@
+{
+    "@context": [
+    {
+        "@version": 1.0,
+        "@protected": true,
+        "id": "@id",
+        "type": "@type",
+        "lensfollowers": {
+          "@id": "https://github.com/teeolendo/lens-id/blob/main/schemas/lensfollowers.jsonld#lensfollowers",
+          "@context": {
+            "@version": 1.1,
+            "@protected": true,
+            "id": "@id",
+            "type": "@type",
+            "lens-vocab": "https://github.com/teeolendo/lens-id/blob/main/schemas/lensfollowers.md#",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "lensid": {
+              "@id": "lens-vocab:lensid",
+              "@type": "xsd:integer"
+            },
+            "lensfollowers": {
+              "@id": "lens-vocab:lensfollowers",
+              "@type": "xsd:integer"
+            }
+          }
+        }
+    }]
+}
