@@ -1,127 +1,107 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "$metadata": {
+  "$metadata": {
       "uris": {
-        "jsonLdContext": "https://raw.githubusercontent.com/teeolendo/lens-id/main/schemas/lensfollowers.jsonld",
-        "jsonSchema": "https://raw.githubusercontent.com/teeolendo/lens-id/main/schemas/lensfollowers.json"
-      }
-    },
-    "required": [
-      "@context",
-      "id",
-      "type",
-      "issuanceDate",
-      "credentialSubject",
-      "credentialSchema",
-      "credentialStatus",
-      "issuer"
-    ],
-    "properties": {
+          "jsonLdContext": "https://raw.githubusercontent.com/teeolendo/lens-id/main/schemas/lensfollowers.jsonld"
+      },
+      "type": "lensfollowers",
+      "version": "1.0"
+  },
+  "$schema": "https://raw.githubusercontent.com/teeolendo/lens-id/main/schemas/lensfollowers.json",
+  "description": "Lens Followers",
+  "title": "lensfollowers",
+  "properties": {
+      "credentialSubject": {
+          "description": "Stores the data of the credential",
+          "title": "Credential subject",
+          "properties": {
+              "followers": {
+                  "description": "No of Lens Followers",
+                  "title": "Followers",
+                  "type": "integer"
+              },
+              "lensid": {
+                  "description": "Lens ID",
+                  "title": "Lens ID",
+                  "type": "integer"
+              },
+              "id": {
+                  "description": "Stores the DID of the subject that owns the credential",
+                  "title": "Credential subject ID",
+                  "format": "uri",
+                  "type": "string"
+              }
+          },
+          "required": [],
+          "type": "object"
+      },
       "@context": {
-        "type": [
-          "string",
-          "array",
-          "object"
-        ]
-      },
-      "id": {
-        "type": "string"
-      },
-      "type": {
-        "type": [
-          "string",
-          "array"
-        ],
-        "items": {
-          "type": "string"
-        }
-      },
-      "issuer": {
-        "type": [
-          "string",
-          "object"
-        ],
-        "format": "uri",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uri"
-          }
-        }
-      },
-      "issuanceDate": {
-        "type": "string",
-        "format": "date-time"
+          "type": [
+              "string",
+              "array",
+              "object"
+          ]
       },
       "expirationDate": {
-        "type": "string",
-        "format": "date-time"
+          "format": "date-time",
+          "type": "string"
+      },
+      "id": {
+          "type": "string"
+      },
+      "issuanceDate": {
+          "format": "date-time",
+          "type": "string"
+      },
+      "issuer": {
+          "type": [
+              "string",
+              "object"
+          ],
+          "format": "uri",
+          "properties": {
+              "id": {
+                  "format": "uri",
+                  "type": "string"
+              }
+          },
+          "required": [
+              "id"
+          ]
+      },
+      "type": {
+          "type": [
+              "string",
+              "array"
+          ],
+          "items": {
+              "type": "string"
+          }
       },
       "credentialSchema": {
-        "type": "object",
-        "required": [
-          "id",
-          "type"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uri"
+          "properties": {
+              "id": {
+                  "format": "uri",
+                  "type": "string"
+              },
+              "type": {
+                  "type": "string"
+              }
           },
-          "type": {
-            "type": "string"
-          }
-        }
-      },
-      "subjectPosition": {
-        "type": "string",
-        "enum": [
-          "none",
-          "index",
-          "value"
-        ]
-      },
-      "merklizationRootPosition": {
-        "type": "string",
-        "enum": [
-          "none",
-          "index",
-          "value"
-        ]
-      },
-      "revNonce": {
-        "type": "integer"
-      },
-      "version": {
-        "type": "integer"
-      },
-      "updatable": {
-        "type": "boolean"
-      },
-      "credentialSubject": {
-        "type": "object",
-        "required": [
-          "id",
-          "lensid",
-          "lensfollowers"
-        ],
-        "properties": {
-          "id": {
-            "title": "Credential Subject ID",
-            "type": "string",
-            "format": "uri"
-          },
-          "lensid": {
-            "type": "integer"
-          },
-          "lensfollowers": {
-            "type": "integer"
-          }
-        }
+          "required": [
+              "id",
+              "type"
+          ],
+          "type": "object"
       }
-    }
-  }
+  },
+  "required": [
+      "credentialSubject",
+      "@context",
+      "id",
+      "issuanceDate",
+      "issuer",
+      "type",
+      "credentialSchema"
+  ],
+  "type": "object"
+}

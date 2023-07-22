@@ -6,9 +6,9 @@ lensid represents the lens profile's unique identifier
   "lensid": xxxx
 ```
 
-# lensfollowers
+# followers
 
-lens-followers represents the no of followers a lens profile has
+followers represents the no of followers a lens profile has
 
 ```
   "lensfollowers": 40
